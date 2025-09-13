@@ -35,6 +35,7 @@
         .navbar-brand {
             font-weight: bold;
             font-size: 24px;
+            cursor: pointer;
         }
         
         /* استایل تابلو اعلانات متحرک */
@@ -218,13 +219,13 @@
             padding: 20px;
         }
         
-        .btn-register {
+        .btn-info {
             background-color: var(--primary-color);
             color: white;
             transition: all 0.3s;
         }
         
-        .btn-register:hover {
+        .btn-info:hover {
             background-color: var(--secondary-color);
         }
         
@@ -233,7 +234,7 @@
             padding: 20px;
             background-color: white;
             border-radius: 10px;
-            box-shadow: 0 5px 1px rgba(0, 0, 0, 1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
             height: 94%;
         }
@@ -368,11 +369,6 @@
             margin-bottom: 5px;
         }
         
-        .teacher-experience {
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-        
         .payment-card {
             height: 100%;
             display: flex;
@@ -409,16 +405,33 @@
                 font-size: 1rem;
             }
         }
+
+        /* استایل برای نمایش تعداد کلیک‌ها */
+        .click-counter {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 10000;
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <!-- هدر <img src="image.jpg" alt="توضیح عکس" width="60" height="60" style="border-radius: 10px;"> -->
+    <!-- نمایش تعداد کلیک‌ها -->
+    <div class="click-counter" id="clickCounter">0</div>
+
+    <!-- هدر -->
     <header class="header">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        
+                    <a class="navbar-brand" href="#" id="logo">
                         <i class="fas fa-graduation-cap"></i>  خوارزمی
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -441,8 +454,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#contact">تماس با ما</a>
                             </li>
-                            
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -464,7 +475,7 @@
     <!-- بخش هیرو -->
     <section class="hero-section">
         <div class="container">
-            <div极class="hero-content">
+            <div class="hero-content">
                 <h1 class="display-4 fw-bold">مجتمع آموزشی خوارزمی</h1>
                 <p class="lead">۱۹ سال تجربه درخشان در زمینه آموزش‌های تخصصی</p>
                 <p>با مدیریت آقای ساجدی</p>
@@ -475,31 +486,12 @@
     
     <!-- باکس اطلاع‌رسانی ثابت -->
     <div class="info-box" id="infoBox">
-        <div class="infobox-header">
+        <div class="info-box-header">
             <h3 class="info-box-title"><i class="fas fa-info-circle"></i> اطلاعیه‌های مهم</h3>
             <span class="current-date" id="currentDate">سه شنبه، ۱۲ فروردین ۱۴۰۳</span>
         </div>
         <div class="info-box-content" id="infoBoxContent">
-            <div class="info-item">
-                <span class="info-badge">اطلاعیه</span>
-                <i class="fas fa-clock"></i>
-                <span>کلاس پایتون فردا ساعت ۱۶:۰۰ به علت برف تعطیل است</span>
-            </div>
-            <div class极info-item alert-item">
-                <span class="info-badge">هشدار</span>
-                <i class="fas fa-bolt"></i>
-                <span>امتحان میان ترم ICDL هفته آینده برگزار می‌شود</span>
-            </div>
-            <div class="info-item">
-                <span class="info-badge">اطلاعیه</span>
-                <i class="fas fa-calendar"></i>
-                <span>ثبت نام ترم جدید از فردا آغاز می‌شود</span>
-            </div>
-            <div class="info-item">
-                <span class="info-badge">اطلاعیه</span>
-                <i class="fas fa-graduation-cap"></i>
-                <span>جلسه رفع اشکال حسابداری روز چهارشنبه برگزار می‌شود</span>
-            </div>
+            <!-- اطلاعیه‌ها به صورت پویا از localStorage بارگذاری می‌شوند -->
         </div>
     </div>
     
@@ -591,7 +583,7 @@
     </footer>
 
     <!-- مودال ورود مدیر -->
-    <div class="modal fade login-modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden极true">
+    <div class="modal fade login-modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="login-header p-3 text-center">
@@ -614,6 +606,25 @@
         </div>
     </div>
 
+    <!-- مودال جزئیات دوره -->
+    <div class="modal fade" id="courseDetailsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="courseDetailsTitle">جزئیات دوره</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="courseDetailsBody">
+                    <!-- محتوای مودال به صورت پویا پر می‌شود -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+                    <button type="button" class="btn btn-primary" onclick="scrollToRegistration()">ثبت نام</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // تابع اسکرول به بخش ثبت نام
@@ -625,6 +636,19 @@
         function closeAnnouncement() {
             document.getElementById('announcementBar').style.display = 'none';
             localStorage.setItem('announcementVisible', 'false');
+        }
+        
+        // تابع نمایش جزئیات دوره در مودال
+        function showCourseDetails(course) {
+            document.getElementById('courseDetailsTitle').textContent = course.name;
+            
+            const modalBody = document.getElementById('courseDetailsBody');
+            modalBody.innerHTML = `
+                <p><strong>مدرس:</strong> ${course.teacher}</p>
+                <p><strong>مدت زمان:</strong> ${course.type === 'private' ? 'تدریس خصوصی' : course.duration}</p>
+                <p><strong>هزینه:</strong> ${course.price}</p>
+                <p><strong>توضیحات:</strong> ${course.longDesc || course.shortDesc || 'توضیحات دوره'}</p>
+            `;
         }
         
         // مدیریت فرم ورود مدیر
@@ -679,6 +703,8 @@
         // بارگذاری دوره‌ها از localStorage
         function loadCourses() {
             const savedCourses = localStorage.getItem('adminCourses');
+            const coursesContainer = document.getElementById('courses-container');
+            
             if (savedCourses) {
                 const courses = JSON.parse(savedCourses);
                 let coursesHTML = '';
@@ -693,15 +719,15 @@
                                 <div class="course-content">
                                     <h4>${course.name}</h4>
                                     <p>مدرس: ${course.teacher}</p>
-                                    <p>${course.description || 'توضیحات دوره'}</p>
+                                    <p>${course.shortDesc || 'توضیحات دوره'}</p>
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         ${course.type === 'private' ? 
                                         '<span class="badge-duration">تدریس خصوصی</span>' : 
                                         '<span class="badge-duration">مدت زمان: ' + course.duration + '</span>'}
                                         <span class="text-success fw-bold">هزینه: ${course.price}</span>
                                     </div>
-                                    <button class="btn btn-register w-100" onclick="scrollToRegistration()">
-                                        ${course.type === 'private' ? 'درخواست تدریس خصوصی' : 'ثبت نام در دوره'}
+                                    <button class="btn btn-info w-100" data-bs-toggle="modal" data-bs-target="#courseDetailsModal" onclick="showCourseDetails(${JSON.stringify(course).replace(/"/g, '&quot;')})">
+                                        اطلاعات بیشتر
                                     </button>
                                 </div>
                             </div>
@@ -709,49 +735,17 @@
                     `;
                 });
                 
-                document.getElementById('courses-container').innerHTML = coursesHTML;
+                coursesContainer.innerHTML = coursesHTML;
             } else {
-                // داده‌های پیش‌فرض
-                const defaultCourses = [
-                    { name: "پایتون", teacher: "آقای اخباری", duration: "۳ ماه", price: "۱,۲۰۰,۰۰۰ تومان", description: "یادگیری برنامه نویسی پایتون از پایه تا پیشرفته", type: "normal", icon: "fas fa-laptop-code" },
-                    { name: "ICDL", teacher: "خانم قاسمی و آقای ایوبی", duration: "۲.۵ ماه", price: "۸۰۰,۰۰۰ تومان", description: "آموزش کامل مهارت های هفتگانه کامپیوتر", type: "normal", icon: "fas fa-desktop" },
-                    { name: "حسابداری", teacher: "آقای مهرگان فرد", duration: "۴ ماه", price: "۱,۵۰۰,۰۰۰ تومان", description: "آموزش اصول حسابداری و نرم افزارهای مالی", type: "normal", icon: "fas fa-calculator" },
-                    { name: "دیپلم", teacher: "آقای محمدبیگی", duration: "۶ ماه", price: "۲,۰۰۰,۰۰۰ تومان", description: "اخذ دیپلم رسمی آموزش و پرورش", type: "normal", icon: "fas fa-graduation-cap" }
-                ];
-                
-                let coursesHTML = '';
-                defaultCourses.forEach(course => {
-                    coursesHTML += `
-                        <div class="col-md-4 mb-4">
-                            <div class="course-card">
-                                <div class="course-img">
-                                    <i class="${course.icon} fa-3x"></i>
-                                </div>
-                                <div class="course-content">
-                                    <h4>${course.name}</h4>
-                                    <p>مدرس: ${course.teacher}</p>
-                                    <p>${course.description}</p>
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <span class="badge-duration">مدت زمان: ${course.duration}</span>
-                                        <span class="text-success fw-bold">هزینه: ${course.price}</span>
-                                    </div>
-                                    <button class="btn btn-register w-100" onclick="scrollToRegistration()">
-                                        ثبت نام در دوره
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                document.getElementById('courses-container').innerHTML = coursesHTML;
-                localStorage.setItem('adminCourses', JSON.stringify(defaultCourses));
+                coursesContainer.innerHTML = '<div class="col-12 text-center"><p>هیچ دوره‌ای ثبت نشده است.</p></div>';
             }
         }
         
         // بارگذاری مدرسین از localStorage
         function loadTeachers() {
             const savedTeachers = localStorage.getItem('adminTeachers');
+            const teachersContainer = document.getElementById('teachers-container');
+            
             if (savedTeachers) {
                 const teachers = JSON.parse(savedTeachers);
                 let teachersHTML = '';
@@ -766,50 +760,23 @@
                                 <div class="teacher-info">
                                     <div class="teacher-name">${teacher.name}</div>
                                     <div class="teacher-subject">${teacher.expertise}</div>
-                                    <div class="teacher-experience">${teacher.experience}</div>
                                 </div>
                             </div>
                         </div>
                     `;
                 });
                 
-                document.getElementById('teachers-container').innerHTML = teachersHTML;
+                teachersContainer.innerHTML = teachersHTML;
             } else {
-                // داده‌های پیش‌فرض
-                const defaultTeachers = [
-                    { name: "آقای ایوبی", expertise: "مدرس ICDL", experience: "1 سال سابقه" },
-                    { name: "آقای اخباری", expertise: "مدرس پایتون", experience: "2 ماه سابقه" },
-                    { name: "آقای محمدبیگی", expertise: "مدرس دیپلم", experience: "2 سال سابقه" },
-                    { name: "خانم قاسمی", expertise: "مدرس ICDL", experience: "6 سال سابقه" },
-                    { name: "آقای مهرگان فرد", expertise: "مدرس حسابداری", experience: "6 ماه سابقه" }
-                ];
-                
-                let teachersHTML = '';
-                defaultTeachers.forEach(teacher => {
-                    teachersHTML += `
-                        <div class="col-md-4 col-sm-6 mb-4">
-                            <div class="teacher-card">
-                                <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fas fa-user-tie fa-2x"></i>
-                                </div>
-                                <div class="teacher-info">
-                                    <div class="teacher-name">${teacher.name}</div>
-                                    <div class="teacher-subject">${teacher.expertise}</div>
-                                    <div class="teacher-experience">${teacher.experience}</div>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                document.getElementById('teachers-container').innerHTML = teachersHTML;
-                localStorage.setItem('adminTeachers', JSON.stringify(defaultTeachers));
+                teachersContainer.innerHTML = '<div class="col-12 text-center"><p>هیچ مدرسی ثبت نشده است.</p></div>';
             }
         }
         
         // بارگذاری اطلاعیه‌ها از localStorage
         function loadInfoItems() {
             const savedInfoItems = localStorage.getItem('infoItems');
+            const infoBoxContent = document.getElementById('infoBoxContent');
+            
             if (savedInfoItems) {
                 const infoItems = JSON.parse(savedInfoItems);
                 let infoItemsHTML = '';
@@ -819,15 +786,48 @@
                     infoItemsHTML += `
                         <div class="info-item ${alertClass}">
                             <span class="info-badge">${item.type === 'alert' ? 'هشدار' : 'اطلاعیه'}</span>
-                            <i class="${item.icon}"></i>
+                            <i class="${item.icon || 'fas fa-info-circle'}"></i>
                             <span>${item.text}</span>
                         </div>
                     `;
                 });
                 
-                document.getElementById('infoBoxContent').innerHTML = infoItemsHTML;
+                infoBoxContent.innerHTML = infoItemsHTML;
+            } else {
+                infoBoxContent.innerHTML = '<div class="text-center"><p>هیچ اطلاعیه‌ای ثبت نشده است.</p></div>';
             }
         }
+
+        // مدیریت کلیک روی لوگو برای باز کردن پنل مدیریت
+        let clickCount = 0;
+        let clickTimer = null;
+        const clickCounter = document.getElementById('clickCounter');
+        const logo = document.getElementById('logo');
+
+        logo.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // افزایش تعداد کلیک‌ها
+            clickCount++;
+            
+            // نمایش تعداد کلیک‌ها
+            clickCounter.textContent = clickCount;
+            clickCounter.style.display = 'block';
+            
+            // پنهان کردن شمارنده بعد از 2 ثانیه
+            if (clickTimer) clearTimeout(clickTimer);
+            clickTimer = setTimeout(() => {
+                clickCounter.style.display = 'none';
+            }, 2000);
+            
+            // اگر 5 بار کلیک شده، باز کردن پنل مدیریت
+            if (clickCount >= 5) {
+                const modal = new bootstrap.Modal(document.getElementById('loginModal'));
+                modal.show();
+                clickCount = 0;
+                clickCounter.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
