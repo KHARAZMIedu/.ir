@@ -35,136 +35,10 @@
         .navbar-brand {
             font-weight: bold;
             font-size: 24px;
-            cursor: pointer;
-        }
-        
-        /* استایل تابلو اعلانات متحرک */
-        .announcement-bar {
-            background: linear-gradient(135deg, var(--accent-color), #ff9800);
-            color: #333;
-            padding: 12px 0;
-            text-align: center;
-            font-weight: bold;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .announcement-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: scrollText 20s linear infinite;
-        }
-        
-        .announcement-icon {
-            margin-left: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .announcement-close {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: transparent;
-            border: none;
-            color: #333;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-        
-        @keyframes scrollText {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-        
-        /* استایل باکس اطلاع‌رسانی ثابت */
-        .info-box {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            border-right: 5px solid var(--primary-color);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .info-box-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px dashed var(--primary-color);
-        }
-        
-        .info-box-title {
-            font-weight: bold;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin: 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .info-box-title i {
-            margin-left: 10px;
-            color: var(--primary-color);
-        }
-        
-        .info-box-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            padding: 8px;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 5px;
-        }
-        
-        .info-item i {
-            margin-left: 10px;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-        
-        .alert-item {
-            background-color: #ffebee;
-            border-right: 3px solid #f44336;
-            animation: blink 2s infinite;
-        }
-        
-        .alert-item i {
-            color: #f44336;
-        }
-        
-        .info-badge {
-            background-color: var(--accent-color);
-            color: var(--dark-color);
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.7; }
-            100% { opacity: 1; }
         }
         
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://wallpaperaccess.com/full/11039627.jpg') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') no-repeat center center;
             background-size: cover;
             color: white;
             padding: 100px 0;
@@ -219,14 +93,15 @@
             padding: 20px;
         }
         
-        .btn-info {
+        .btn-primary {
             background-color: var(--primary-color);
-            color: white;
+            border-color: var(--primary-color);
             transition: all 0.3s;
         }
         
-        .btn-info:hover {
+        .btn-primary:hover {
             background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
         }
         
         .teacher-card {
@@ -236,7 +111,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
-            height: 94%;
+            height: 100%;
         }
         
         .teacher-card:hover {
@@ -250,26 +125,6 @@
             object-fit: cover;
             margin: 0 auto 15px;
             border: 5px solid #f1f1f1;
-        }
-        
-        .feature-box {
-            text-align: center;
-            padding: 30px 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-            height: 100%;
-        }
-        
-        .feature-box:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 40px;
-            color: var(--primary-color);
-            margin-bottom: 15px;
         }
         
         .footer {
@@ -322,23 +177,6 @@
             font-size: 12px;
         }
         
-        .login-modal .modal-content {
-            border-radius: 10px;
-        }
-        
-        .login-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-top-right-radius: 10px;
-            border-top-left-radius: 10px;
-        }
-        
-        .btn-admin {
-            background-color: var(--accent-color);
-            color: var(--dark-color);
-            font-weight: bold;
-        }
-        
         .registration-section {
             background-color: #f8f9fa;
             padding: 60px 0;
@@ -352,7 +190,6 @@
             border-right: 4px solid var(--accent-color);
         }
         
-        /* استایل‌های جدید برای بخش اساتید */
         .teacher-info {
             text-align: center;
             margin-bottom: 15px;
@@ -384,54 +221,91 @@
             margin-bottom: 15px;
         }
         
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-right: 5px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-box-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed var(--primary-color);
+        }
+        
+        .info-box-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-box-title i {
+            margin-left: 10px;
+            color: var(--primary-color);
+        }
+        
+        .info-box-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+        }
+        
+        .info-item i {
+            margin-left: 10px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .alert-item {
+            background-color: #ffebee;
+            border-right: 3px solid #f44336;
+        }
+        
+        .alert-item i {
+            color: #f44336;
+        }
+        
+        .info-badge {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
         @media (max-width: 768px) {
             .hero-section {
                 padding: 60px 0;
             }
-            
-            .announcement-content {
-                animation: scrolltext 15s linear infinite;
-            }
-            
-            .announcement-close {
-                left: 10px;
-            }
-            
-            .info-box-title {
-                font-size: 1.2rem;
-            }
-            
-            .info-box-content {
-                font-size: 1rem;
-            }
-        }
-
-        /* استایل برای نمایش تعداد کلیک‌ها */
-        .click-counter {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background-color: var(--accent-color);
-            color: var(--dark-color);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            z-index: 10000;
-            display: none;
         }
     </style>
 </head>
 <body>
-    <!-- نمایش تعداد کلیک‌ها -->
-    <div class="click-counter" id="clickCounter">0</div>
-
     <!-- هدر -->
     <header class="header">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#" id="logo">
+                    <a class="navbar-brand" href="#">
                         <i class="fas fa-graduation-cap"></i>  خوارزمی
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -461,17 +335,6 @@
         </div>
     </header>
 
-    <!-- تابلو اعلانات متحرک -->
-    <div class="announcement-bar" id="announcementBar">
-        <button class="announcement-close" onclick="closeAnnouncement()">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="announcement-content" id="announcementContent">
-            <i class="fas fa-bullhorn announcement-icon"></i>
-            <span id="announcementText">مجتمع خوارزمی - ثبت نام ترم جدید آغاز شد. برای اطلاعات بیشتر با ما تماس بگیرید.</span>
-        </div>
-    </div>
-
     <!-- بخش هیرو -->
     <section class="hero-section">
         <div class="container">
@@ -485,13 +348,32 @@
     </section>
     
     <!-- باکس اطلاع‌رسانی ثابت -->
-    <div class="info-box" id="infoBox">
+    <div class="info-box">
         <div class="info-box-header">
             <h3 class="info-box-title"><i class="fas fa-info-circle"></i> اطلاعیه‌های مهم</h3>
             <span class="current-date" id="currentDate">سه شنبه، ۱۲ فروردین ۱۴۰۳</span>
         </div>
-        <div class="info-box-content" id="infoBoxContent">
-            <!-- اطلاعیه‌ها به صورت پویا از localStorage بارگذاری می‌شوند -->
+        <div class="info-box-content">
+            <div class="info-item">
+                <span class="info-badge">اطلاعیه</span>
+                <i class="fas fa-clock"></i>
+                <span>کلاس پایتون فردا ساعت ۱۶:۰۰ به علت برف تعطیل است</span>
+            </div>
+            <div class="info-item alert-item">
+                <span class="info-badge">هشدار</span>
+                <i class="fas fa-bolt"></i>
+                <span>امتحان میان ترم ICDL هفته آینده برگزار می‌شود</span>
+            </div>
+            <div class="info-item">
+                <span class="info-badge">اطلاعیه</span>
+                <i class="fas fa-calendar"></i>
+                <span>ثبت نام ترم جدید از فردا آغاز می‌شود</span>
+            </div>
+            <div class="info-item">
+                <span class="info-badge">اطلاعیه</span>
+                <i class="fas fa-graduation-cap"></i>
+                <span>جلسه رفع اشکال حسابداری روز چهارشنبه برگزار می‌شود</span>
+            </div>
         </div>
     </div>
     
@@ -500,8 +382,66 @@
         <div class="container">
             <h2 class="section-title">دوره های آموزشی</h2>
             
-            <div class="row" id="courses-container">
-                <!-- دوره‌ها به صورت پویا از localStorage بارگذاری می‌شوند -->
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="course-card">
+                        <div class="course-img">
+                            <i class="fas fa-laptop-code fa-3x"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>پایتون</h4>
+                            <p>مدرس: آقای اخباری</p>
+                            <p>یادگیری برنامه نویسی پایتون از پایه تا پیشرفته</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge-duration">مدت زمان: ۳ ماه</span>
+                                <span class="text-success fw-bold">هزینه: ۱,۲۰۰,۰۰۰ تومان</span>
+                            </div>
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#courseDetailsModal">
+                                اطلاعات بیشتر
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="course-card">
+                        <div class="course-img">
+                            <i class="fas fa-desktop fa-3x"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>ICDL</h4>
+                            <p>مدرس: خانم قاسمی و آقای ایوبی</p>
+                            <p>آموزش کامل مهارت های هفتگانه کامپیوتر</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge-duration">مدت زمان: ۲.۵ ماه</span>
+                                <span class="text-success fw-bold">هزینه: ۸۰۰,۰۰۰ تومان</span>
+                            </div>
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#courseDetailsModal">
+                                اطلاعات بیشتر
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="course-card">
+                        <div class="course-img">
+                            <i class="fas fa-calculator fa-3x"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>حسابداری</h4>
+                            <p>مدرس: آقای مهرگان فرد</p>
+                            <p>آموزش اصول حسابداری و نرم افزارهای مالی</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge-duration">مدت زمان: ۴ ماه</span>
+                                <span class="text-success fw-bold">هزینه: ۱,۵۰۰,۰۰۰ تومان</span>
+                            </div>
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#courseDetailsModal">
+                                اطلاعات بیشتر
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -510,8 +450,42 @@
     <section class="py-5 bg-light" id="about">
         <div class="container">
             <h2 class="section-title">اساتید برجسته</h2>
-            <div class="row" id="teachers-container">
-                <!-- مدرسین به صورت پویا از localStorage بارگذاری می‌شوند -->
+            <div class="row">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="teacher-card">
+                        <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-user-tie fa-2x"></i>
+                        </div>
+                        <div class="teacher-info">
+                            <div class="teacher-name">آقای ایوبی</div>
+                            <div class="teacher-subject">مدرس ICDL</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="teacher-card">
+                        <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-user-tie fa-2x"></i>
+                        </div>
+                        <div class="teacher-info">
+                            <div class="teacher-name">آقای اخباری</div>
+                            <div class="teacher-subject">مدرس پایتون</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="teacher-card">
+                        <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-user-tie fa-2x"></i>
+                        </div>
+                        <div class="teacher-info">
+                            <div class="teacher-name">خانم قاسمی</div>
+                            <div class="teacher-subject">مدرس ICDL</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -582,44 +556,23 @@
         </div>
     </footer>
 
-    <!-- مودال ورود مدیر -->
-    <div class="modal fade login-modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="login-header p-3 text-center">
-                    <h5 class="modal-title" id="loginModalLabel">ورود به پنل مدیریت</h5>
-                </div>
-                <div class="modal-body">
-                    <form id="adminLoginForm">
-                        <div class="mb-3">
-                            <label for="adminUsername" class="form-label">نام کاربری</label>
-                            <input type="text" class="form-control" id="adminUsername" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="adminPassword" class="form-label">رمز عبور</label>
-                            <input type="password" class="form-control" id="adminPassword" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">ورود</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- مودال جزئیات دوره -->
     <div class="modal fade" id="courseDetailsModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="courseDetailsTitle">جزئیات دوره</h5>
+                    <h5 class="modal-title">جزئیات دوره</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="courseDetailsBody">
-                    <!-- محتوای مودال به صورت پویا پر می‌شود -->
+                <div class="modal-body">
+                    <p><strong>مدرس:</strong> آقای اخباری</p>
+                    <p><strong>مدت زمان:</strong> ۳ ماه</p>
+                    <p><strong>هزینه:</strong> ۱,۲۰۰,۰۰۰ تومان</p>
+                    <p><strong>توضیحات:</strong> در این دوره شما برنامه نویسی پایتون را از پایه تا پیشرفته یاد خواهید گرفت. این دوره شامل مباحث مقدماتی، شیء گرایی، کار با پایگاه داده و ساخت پروژه عملی می‌باشد.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
-                    <button type="button" class="btn btn-primary" onclick="scrollToRegistration()">ثبت نام</button>
+                    <a href="#registration" class="btn btn-primary">ثبت نام</a>
                 </div>
             </div>
         </div>
@@ -627,206 +580,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // تابع اسکرول به بخش ثبت نام
-        function scrollToRegistration() {
-            document.getElementById('registration').scrollIntoView({behavior: 'smooth'});
-        }
-        
-        // تابع بستن تابلو اعلانات
-        function closeAnnouncement() {
-            document.getElementById('announcementBar').style.display = 'none';
-            localStorage.setItem('announcementVisible', 'false');
-        }
-        
-        // تابع نمایش جزئیات دوره در مودال
-        function showCourseDetails(course) {
-            document.getElementById('courseDetailsTitle').textContent = course.name;
-            
-            const modalBody = document.getElementById('courseDetailsBody');
-            modalBody.innerHTML = `
-                <p><strong>مدرس:</strong> ${course.teacher}</p>
-                <p><strong>مدت زمان:</strong> ${course.type === 'private' ? 'تدریس خصوصی' : course.duration}</p>
-                <p><strong>هزینه:</strong> ${course.price}</p>
-                <p><strong>توضیحات:</strong> ${course.longDesc || course.shortDesc || 'توضیحات دوره'}</p>
-            `;
-        }
-        
-        // مدیریت فرم ورود مدیر
-        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('adminUsername').value;
-            const password = document.getElementById('adminPassword').value;
-            
-            // اعتبارسنجی (نام کاربری و رمز عبور باید admin باشد)
-            if (username === 'admin' && password === 'admin') {
-                // ذخیره اطلاعات ورود در localStorage
-                localStorage.setItem('adminLoggedIn', 'true');
-                localStorage.setItem('adminUsername', username);
-                
-                // هدایت به صفحه مدیریت
-                window.location.href = 'seifor.html';
-            } else {
-                alert('نام کاربری یا رمز عبور اشتباه است. لطفاً دوباره تلاش کنید.');
-            }
-        });
-        
-        // بارگذاری اعلان متحرک از localStorage
+        // بارگذاری تاریخ جاری
         document.addEventListener('DOMContentLoaded', function() {
-            // بارگذاری اعلان متحرک
-            const announcementText = localStorage.getItem('announcementText');
-            const announcementVisible = localStorage.getItem('announcementVisible');
-            
-            if (announcementText) {
-                document.getElementById('announcementText').textContent = announcementText;
-            }
-            
-            if (announcementVisible === 'false') {
-                document.getElementById('announcementBar').style.display = 'none';
-            }
-            
-            // بارگذاری تاریخ جاری
             const now = new Date();
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             document.getElementById('currentDate').textContent = now.toLocaleDateString('fa-IR', options);
-            
-            // بارگذاری دوره‌ها
-            loadCourses();
-            
-            // بارگذاری مدرسین
-            loadTeachers();
-            
-            // بارگذاری اطلاعیه‌ها
-            loadInfoItems();
-        });
-        
-        // بارگذاری دوره‌ها از localStorage
-        function loadCourses() {
-            const savedCourses = localStorage.getItem('adminCourses');
-            const coursesContainer = document.getElementById('courses-container');
-            
-            if (savedCourses) {
-                const courses = JSON.parse(savedCourses);
-                let coursesHTML = '';
-                
-                courses.forEach(course => {
-                    coursesHTML += `
-                        <div class="col-md-4 mb-4">
-                            <div class="course-card">
-                                <div class="course-img">
-                                    <i class="${course.icon || 'fas fa-laptop-code'} fa-3x"></i>
-                                </div>
-                                <div class="course-content">
-                                    <h4>${course.name}</h4>
-                                    <p>مدرس: ${course.teacher}</p>
-                                    <p>${course.shortDesc || 'توضیحات دوره'}</p>
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        ${course.type === 'private' ? 
-                                        '<span class="badge-duration">تدریس خصوصی</span>' : 
-                                        '<span class="badge-duration">مدت زمان: ' + course.duration + '</span>'}
-                                        <span class="text-success fw-bold">هزینه: ${course.price}</span>
-                                    </div>
-                                    <button class="btn btn-info w-100" data-bs-toggle="modal" data-bs-target="#courseDetailsModal" onclick="showCourseDetails(${JSON.stringify(course).replace(/"/g, '&quot;')})">
-                                        اطلاعات بیشتر
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                coursesContainer.innerHTML = coursesHTML;
-            } else {
-                coursesContainer.innerHTML = '<div class="col-12 text-center"><p>هیچ دوره‌ای ثبت نشده است.</p></div>';
-            }
-        }
-        
-        // بارگذاری مدرسین از localStorage
-        function loadTeachers() {
-            const savedTeachers = localStorage.getItem('adminTeachers');
-            const teachersContainer = document.getElementById('teachers-container');
-            
-            if (savedTeachers) {
-                const teachers = JSON.parse(savedTeachers);
-                let teachersHTML = '';
-                
-                teachers.forEach(teacher => {
-                    teachersHTML += `
-                        <div class="col-md-4 col-sm-6 mb-4">
-                            <div class="teacher-card">
-                                <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fas fa-user-tie fa-2x"></i>
-                                </div>
-                                <div class="teacher-info">
-                                    <div class="teacher-name">${teacher.name}</div>
-                                    <div class="teacher-subject">${teacher.expertise}</div>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                teachersContainer.innerHTML = teachersHTML;
-            } else {
-                teachersContainer.innerHTML = '<div class="col-12 text-center"><p>هیچ مدرسی ثبت نشده است.</p></div>';
-            }
-        }
-        
-        // بارگذاری اطلاعیه‌ها از localStorage
-        function loadInfoItems() {
-            const savedInfoItems = localStorage.getItem('infoItems');
-            const infoBoxContent = document.getElementById('infoBoxContent');
-            
-            if (savedInfoItems) {
-                const infoItems = JSON.parse(savedInfoItems);
-                let infoItemsHTML = '';
-                
-                infoItems.forEach(item => {
-                    const alertClass = item.type === 'alert' ? 'alert-item' : '';
-                    infoItemsHTML += `
-                        <div class="info-item ${alertClass}">
-                            <span class="info-badge">${item.type === 'alert' ? 'هشدار' : 'اطلاعیه'}</span>
-                            <i class="${item.icon || 'fas fa-info-circle'}"></i>
-                            <span>${item.text}</span>
-                        </div>
-                    `;
-                });
-                
-                infoBoxContent.innerHTML = infoItemsHTML;
-            } else {
-                infoBoxContent.innerHTML = '<div class="text-center"><p>هیچ اطلاعیه‌ای ثبت نشده است.</p></div>';
-            }
-        }
-
-        // مدیریت کلیک روی لوگو برای باز کردن پنل مدیریت
-        let clickCount = 0;
-        let clickTimer = null;
-        const clickCounter = document.getElementById('clickCounter');
-        const logo = document.getElementById('logo');
-
-        logo.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // افزایش تعداد کلیک‌ها
-            clickCount++;
-            
-            // نمایش تعداد کلیک‌ها
-            clickCounter.textContent = clickCount;
-            clickCounter.style.display = 'block';
-            
-            // پنهان کردن شمارنده بعد از 2 ثانیه
-            if (clickTimer) clearTimeout(clickTimer);
-            clickTimer = setTimeout(() => {
-                clickCounter.style.display = 'none';
-            }, 2000);
-            
-            // اگر 5 بار کلیک شده، باز کردن پنل مدیریت
-            if (clickCount >= 5) {
-                const modal = new bootstrap.Modal(document.getElementById('loginModal'));
-                modal.show();
-                clickCount = 0;
-                clickCounter.style.display = 'none';
-            }
         });
     </script>
 </body>
