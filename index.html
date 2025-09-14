@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مجتمع فنی آموزشی خوارزمی | آموزش‌های تخصصی با ۱۹ سال تجربه</title>
     <meta name="description" content="مجتمع فنی آموزشی خوارزمی با ۱۹ سال سابقه درخشان در زمینه آموزش‌های تخصصی، دوره‌های پایتون، ICDL، حسابداری، دیپلم و گرافیک را ارائه می‌دهد.">
-    <meta name="keywords" content="آموزشگاه خوارزمی, دوره پایتون, دوره ICDL, دوره حسابداری, آموزش گرافیک, کلاس زبان انگلیسی, مجتمع آموزشی, آموزش فنی">
+    <meta name="keywords" content="آموزشگاه خوارزمی, دوره پایتون, دوره ICDL, دوره حسابداری, آموزش گرافیک, کلاس زبان англий, مجتمع آموزشی, آموزش فنی">
     <meta name="author" content="مجتمع فنی آموزشی خوارزمی">
     <meta property="og:title" content="مجتمع فنی آموزشی خوارزمی">
     <meta property="og:description" content="۱۹ سال تجربه درخشان در زمینه آموزش‌های تخصصی">
@@ -324,6 +324,41 @@
             margin-bottom: 0;
         }
         
+        /* استایل‌های جدید برای بنرهای اصلی */
+        .main-banner {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        
+        .main-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* استایل‌های جدید برای بنرهای کناری */
+        .side-banner {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .ratio-9x16 {
+            aspect-ratio: 9/16;
+        }
+        
+        .banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
         @media (max-width: 768px) {
             .hero-section {
                 padding: 60px 0;
@@ -335,6 +370,14 @@
             
             .banner-placeholder i {
                 font-size: 2rem;
+            }
+            
+            .side-banner {
+                margin: 20px 0;
+            }
+            
+            .main-banner {
+                margin: 10px 0;
             }
         }
     </style>
@@ -376,12 +419,7 @@
     </header>
 
     <!-- بنر ۱ -->
-    <div class="container mt-4">
-        <div class="banner-placeholder">
-            <i class="fas fa-ad"></i>
-            <p>اینجا محل قرارگیری بنر اول است - imginja</p>
-        </div>
-    </div>
+    
 
     <!-- بخش هیرو -->
     <section class="hero-section">
@@ -396,13 +434,7 @@
     </section>
     
     <!-- بنر ۲ -->
-    <div class="container mt-4">
-        <div class="banner-placeholder">
-            <i class="fas fa-ad"></i>
-            <p>اینجا محل قرارگیری بنر دوم است - imginja</p>
-        </div>
-    </div>
-
+    
     <!-- باکس اطلاع‌رسانی ثابت -->
     <div class="info-box">
         <div class="info-box-header">
@@ -439,78 +471,91 @@
             <h2 class="section-title">دوره های آموزشی</h2>
             
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="course-card">
-                        <div class="course-img">
-                            <i class="fas fa-laptop-code fa-3x"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>پایتون</h4>
-                            <p>مدرس: آقای اخباری</p>
-                            <p>یادگیری برنامه نویسی پایتون از پایه تا پیشرفته</p>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="badge-duration">مدت زمان: ۳ ماه</span>
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="course-card">
+                                <div class="course-img">
+                                    <i class="fas fa-laptop-code fa-3x"></i>
+                                </div>
+                                <div class="course-content">
+                                    <h4>پایتون</h4>
+                                    <p>مدرس: آقای اخباری</p>
+                                    <p>یادگیری برنامه نویسی پایتون از پایه تا پیشرفته</p>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="badge-duration">مدت زمان: ۳ ماه</span>
+                                    </div>
+                                    <button class="btn btn-primary w-100" onclick="showCourseDetails('پایتون', 'آقای اخباری', '۳ ماه', '۱,۲۰۰,۰۰۰ تومان', 'در این دوره شما برنامه نویسی پایتون را از پایه تا پیشرفته یاد خواهید گرفت. این دوره شامل مباحث مقدماتی، شیء گرایی، کار با پایگاه داده و ساخت پروژه عملی می‌باشد.')">
+                                        اطلاعات بیشتر
+                                    </button>
+                                </div>
                             </div>
-                            <button class="btn btn-primary w-100" onclick="showCourseDetails('پایتون', 'آقای اخباری', '۳ ماه', '۱,۲۰۰,۰۰۰ تومان', 'در این دوره شما برنامه نویسی پایتون را از پایه تا پیشرفته یاد خواهید گرفت. این دوره شامل مباحث مقدماتی، شیء گرایی، کار با پایگاه داده و ساخت پروژه عملی می‌باشد.')">
-                                اطلاعات بیشتر
-                            </button>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="course-card">
-                        <div class="course-img">
-                            <i class="fas fa-desktop fa-3x"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>ICDL</h4>
-                            <p>مدرس: خانم قاسمی و آقای ایوبی</p>
-                            <p>آموزش کامل مهارت های هفتگانه کامپیوتر</p>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="badge-duration">مدت زمان: ۲.۵ ماه</span>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="course-card">
+                                <div class="course-img">
+                                    <i class="fas fa-desktop fa-3x"></i>
+                                </div>
+                                <div class="course-content">
+                                    <h4>ICDL</h4>
+                                    <p>مدرس: خانم قاسمی و آقای ایوبی</p>
+                                    <p>آموزش کامل مهارت های هفتگانه کامپیوتر</p>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="badge-duration">مدت زمان: ۲.۵ ماه</span>
+                                    </div>
+                                    <button class="btn btn-primary w-100" onclick="showCourseDetails('ICDL', 'خانم قاسمی و آقای ایوبی', '۲.۵ ماه', '۸۰۰,۰۰۰ تومان', 'دوره ICDL شامل آموزش هفت مهارت اصلی کامپیوتر شامل: مفاهیم پایه فناوری اطلاعات، استفاده از کامپیوتر و مدیریت فایل‌ها، واژه پردازی، صفحه گسترده، پایگاه داده، ارائه مطلب و اطلاعات و ارتباطات می‌باشد.')">
+                                        اطلاعات بیشتر
+                                    </button>
+                                </div>
                             </div>
-                            <button class="btn btn-primary w-100" onclick="showCourseDetails('ICDL', 'خانم قاسمی و آقای ایوبی', '۲.۵ ماه', '۸۰۰,۰۰۰ تومان', 'دوره ICDL شامل آموزش هفت مهارت اصلی کامپیوتر شامل: مفاهیم پایه فناوری اطلاعات، استفاده از کامپیوتر و مدیریت فایل‌ها، واژه پردازی، صفحه گسترده، پایگاه داده، ارائه مطلب و اطلاعات و ارتباطات می‌باشد.')">
-                                اطلاعات بیشتر
-                            </button>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="course-card">
-                        <div class="course-img">
-                            <i class="fas fa-calculator fa-3x"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>حسابداری</h4>
-                            <p>مدرس: آقای مهرگان فرد</p>
-                            <p>آموزش اصول حسابداری و نرم افزارهای مالی</p>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="badge-duration">مدت زمان: ۴ ماه</span>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="course-card">
+                                <div class="course-img">
+                                    <i class="fas fa-calculator fa-3x"></i>
+                                </div>
+                                <div class="course-content">
+                                    <h4>حسابداری</h4>
+                                    <p>مدرس: آقای مهرگان فرد</p>
+                                    <p>آموزش اصول حسابداری و نرم افزارهای مالی</p>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="badge-duration">مدت زمان: ۴ ماه</span>
+                                    </div>
+                                    <button class="btn btn-primary w-100" onclick="showCourseDetails('حسابداری', 'آقای مهرگان فرد', '۴ ماه', '۱,۵۰۰,۰۰۰ تومان', 'در این دوره اصول حسابداری مقدماتی و پیشرفته، نرم افزارهای مالی، تهیه گزارشات مالی، حقوق و دستمزد و سایر مباحث مرتبط با حسابداری آموزش داده می‌شود. این دوره برای افرادی که قصد ورود به بازار کار حسابداری را دارند بسیار مناسب است.')">
+                                        اطلاعات بیشتر
+                                    </button>
+                                </div>
                             </div>
-                            <button class="btn btn-primary w-100" onclick="showCourseDetails('حسابداری', 'آقای مهرگان فرد', '۴ ماه', '۱,۵۰۰,۰۰۰ تومان', 'در این دوره اصول حسابداری مقدماتی و پیشرفته، نرم افزارهای مالی، تهیه گزارشات مالی، حقوق و دستمزد و سایر مباحث مرتبط با حسابداری آموزش داده می‌شود. این دوره برای افرادی که قصد ورود به بازار کار حسابداری را دارند بسیار مناسب است.')">
-                                اطلاعات بیشتر
-                            </button>
                         </div>
-                    </div>
-                </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="course-card">
-                        <div class="course-img">
-                            <i class="fas fa-graduation-cap fa-3x"></i>
-                        </div>
-                        <div class="course-content">
-                            <h4>دیپلم</h4>
-                            <p>مدرس: آقای محمدبیگی</p>
-                            <p>اخذ دیپلم رسمی آموزش و پرورش</p>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="badge-duration">مدت زمان: ۶ ماه</span>
+                        <div class="col-md-4 mb-4">
+                            <div class="course-card">
+                                <div class="course-img">
+                                    <i class="fas fa-graduation-cap fa-3x"></i>
+                                </div>
+                                <div class="course-content">
+                                    <h4>دیپلم</h4>
+                                    <p>مدرس: آقای محمدبیگی</p>
+                                    <p>اخذ دیپلم رسمی آموزش و پرورش</p>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="badge-duration">مدت زمان: ۶ ماه</span>
+                                    </div>
+                                    <button class="btn btn-primary w-100" onclick="showCourseDetails('دیپلم', 'آقای محمدبیگی', '۶ ماه', '۲,۰۰۰,۰۰۰ تومان', 'این دوره برای افرادی طراحی شده که قصد اخذ دیplom رسمی آموزش و پرورش را دارند. در این دوره تمامی دروس لازم تدریس شده و در پایان، مدرک معتبر اعطا می‌گردد.')">
+                                        اطلاعات بیشتر
+                                    </button>
+                                </div>
                             </div>
-                            <button class="btn btn-primary w-100" onclick="showCourseDetails('دیپلم', 'آقای محمدبیگی', '۶ ماه', '۲,۰۰۰,۰۰۰ تومان', 'این دوره برای افرادی طراحی شده که قصد اخذ دیplom رسمی آموزش و پرورش را دارند. در این دوره تمامی دروس لازم تدریس شده و در پایان، مدرک معتبر اعطا می‌گردد.')">
-                                اطلاعات بیشتر
-                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- بنر کنار دوره ها (سمت راست) -->
+                <div class="col-lg-3">
+                    <div class="side-banner ratio-9x16">
+                        <div class="banner-placeholder h-100">
+                            <img src="https://raw.githubusercontent.com/KHARAZMIedu/.ir/main/%D8%A2%D9%85%D9%88%D8%B2%D8%B4%DA%AF%D8%A7%D9%87%20%D8%AE%D9%88%D8%A7%D8%B1%D8%B2%D9%85%DB%8C(%D9%87%D9%88%D8%B4%20%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C)-4.jpg" alt="بنر دوره‌ها" class="banner-img">
                         </div>
                     </div>
                 </div>
@@ -519,74 +564,82 @@
     </section>
 
     <!-- بنر ۳ -->
-    <div class="container mt-4">
-        <div class="banner-placeholder">
-            <i class="fas fa-ad"></i>
-            <p>اینجا محل قرارگیری بنر سوم است - imginja</p>
-        </div>
-    </div>
+    
 
     <!-- بخش اساتید -->
     <section class="py-5 bg-light" id="about">
         <div class="container">
             <h2 class="section-title">اساتید برجسته</h2>
             <div class="row">
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="teacher-card">
-                        <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-user-tie fa-2x"></i>
-                        </div>
-                        <div class="teacher-info">
-                            <div class="teacher-name">آقای ایوبی</div>
-                            <div class="teacher-subject">مدرس ICDL</div>
+                <!-- بنر کنار اساتید (سمت چپ) -->
+                <div class="col-lg-3 order-2 order-lg-1">
+                    <div class="side-banner ratio-9x16">
+                        <div class="banner-placeholder h-100">
+                            <img src="https://raw.githubusercontent.com/KHARAZMIedu/.ir/main/IMG-20250914-WA0000.jpg" alt="بنر اساتید" class="banner-img">
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="teacher-card">
-                        <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-user-tie fa-2x"></i>
+                <div class="col-lg-9 order-1 order-lg-2">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="teacher-card">
+                                <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-user-tie fa-2x"></i>
+                                </div>
+                                <div class="teacher-info">
+                                    <div class="teacher-name">آقای ایوبی</div>
+                                    <div class="teacher-subject">مدرس ICDL</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="teacher-info">
-                            <div class="teacher-name">آقای اخباری</div>
-                            <div class="teacher-subject">مدرس پایتون</div>
+                        
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="teacher-card">
+                                <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-user-tie fa-2x"></i>
+                                </div>
+                                <div class="teacher-info">
+                                    <div class="teacher-name">آقای اخباری</div>
+                                    <div class="teacher-subject">مدرس پایتون</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="teacher-card">
-                        <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-user-tie fa-2x"></i>
+                        
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="teacher-card">
+                                <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-user-tie fa-2x"></i>
+                                </div>
+                                <div class="teacher-info">
+                                    <div class="teacher-name">خانم قاسمی</div>
+                                    <div class="teacher-subject">مدرس ICDL</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="teacher-info">
-                            <div class="teacher-name">خانم قاسمی</div>
-                            <div class="teacher-subject">مدرس ICDL</div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="teacher-card">
-                        <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-user-tie fa-2x"></i>
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="teacher-card">
+                                <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-user-tie fa-2x"></i>
+                                </div>
+                                <div class="teacher-info">
+                                    <div class="teacher-name">آقای مهرگان فرد</div>
+                                    <div class="teacher-subject">مدرس حسابداری</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="teacher-info">
-                            <div class="teacher-name">آقای مهرگان فرد</div>
-                            <div class="teacher-subject">مدرس حسابداری</div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="teacher-card">
-                        <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-user-tie fa-2x"></i>
-                        </div>
-                        <div class="teacher-info">
-                            <div class="teacher-name">آقای محمدبیگی</div>
-                            <div class="teacher-subject">مدرس دیپلم</div>
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="teacher-card">
+                                <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-user-tie fa-2x"></i>
+                                </div>
+                                <div class="teacher-info">
+                                    <div class="teacher-name">آقای محمدبیگی</div>
+                                    <div class="teacher-subject">مدرس دیپلم</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -630,9 +683,8 @@
 
     <!-- بنر ۴ -->
     <div class="container mt-4">
-        <div class="banner-placeholder">
-            <i class="fas fa-ad"></i>
-            <p>اینجا محل قرارگیری بنر چهارم است - imginja</p>
+        <div class="main-banner">
+            <img src="https://via.placeholder.com/1200x300/159895/ffffff?text=فرصت+های+شغلی+پس+از+آموزش" alt="بنر فرصت‌های شغلی" class="img-fluid">
         </div>
     </div>
 
@@ -642,7 +694,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h4 class="footer-title">درباره مجتمع خوارزمی</h4>
-                    <p>مجتمع آموزشی خوارزمی با ۱۹ سال سابقه درخشان در زمینه آموزش‌های تخصصی، مفتخر است که با بهره‌گیری از اساتید مجرب، بهترین خدمات آموزشی را ارائه نماید.</p>
+                    <p>مجتمع آموزشی خوارزمی با ۱۹ سال سابقه درخشان в زمینه آموزش‌های تخصصی، مفتخر است که با بهره‌گیری از اساتید مجرب، بهترین خدمات آموزشی را ارائه نماید.</p>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h4 class="footer-title">لینک های سریع</h4>
