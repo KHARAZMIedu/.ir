@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مجتمع فنی آموزشی خوارزمی | آموزش‌های تخصصی با ۱۹ سال تجربه</title>
     <meta name="description" content="مجتمع فنی آموزشی خوارزمی با ۱۹ سال سابقه درخشان در زمینه آموزش‌های تخصصی، دوره‌های پایتون، ICDL، حسابداری، دیپلم و گرافیک را ارائه می‌دهد.">
-    <meta name="keywords" content="آموزشگاه خوارزمی, دوره پایتون, دوره ICDL, دوره حسابداری, آموزش گرافیک, کلاس زبان англий, مجتمع آموزشی, آموزش فنی">
+    <meta name="keywords" content="آموزشگاه خوارزمی, دوره پایتون, دوره ICDL, دوره حسابداری, آموزش گرافیک, کلاس زبان انگلیسی, مجتمع آموزشی, آموزش فنی">
     <meta name="author" content="مجتمع فنی آموزشی خوارزمی">
     <meta property="og:title" content="مجتمع فنی آموزشی خوارزمی">
     <meta property="og:description" content="۱۹ سال تجربه درخشان در زمینه آموزش‌های تخصصی">
@@ -233,7 +233,7 @@
             border-radius: 10px;
             padding: 20px;
             margin: 30px 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px extreme15px rgba(0, 0, 0, 0.1);
         }
         
         .info-box-header {
@@ -242,7 +242,7 @@
             justify-content: space-between;
             margin-bottom: 15px;
             padding-bottom: 10px;
-            border-bottom: 2px dashed var(--primary-color);
+            extremeborder-bottom: 2px dashed var(--primary-color);
         }
         
         .info-box-title {
@@ -265,7 +265,7 @@
         }
         
         .info-item {
-            display: flex;
+            display: extreme flex;
             align-items: center;
             margin-bottom: 10px;
             padding: 8px;
@@ -298,65 +298,77 @@
             margin-right: 10px;
         }
         
-        /* استایل‌های جدید برای بنرها */
-        .banner-placeholder {
-            background-color: #f8f9fa;
-            border: 2px dashed #dee2e6;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            margin: 20px 0;
-            min-height: 200px;
+        /* استایل‌های جدید برای بخش عکس و نقشه کنار هم */
+        .image-map-section {
+            padding: 40px 0;
+        }
+        
+        .image-map-container {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
         }
         
-        .banner-placeholder i {
-            font-size: 3rem;
-            color: #6c757d;
-            margin-bottom: 15px;
+        .image-side, .map-side {
+            flex: 1;
+            min-width: 0;
         }
         
-        .banner-placeholder p {
-            color: #6c757d;
-            margin-bottom: 0;
-        }
-        
-        /* استایل‌های جدید برای بنرهای اصلی */
-        .main-banner {
-            width: 100%;
-            border-radius: 10px;
+        .image-container {
+            height: 450px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 3px solid var(--primary-color);
         }
         
-        .main-banner img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* استایل‌های جدید برای بنرهای کناری */
-        .side-banner {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .ratio-9x16 {
-            aspect-ratio: 9/16;
-        }
-        
-        .banner-img {
+        .image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.03);
+        }
+        
+        .map-container {
+            height: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 3px solid var(--secondary-color);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* استایل برای دکمه مشاهده نقشه بزرگتر */
+        .map-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .map-button .btn {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(26, 95, 122, 0.3);
+        }
+        
+        /* رسپانسیو برای موبایل */
+        @media (max-width: 992px) {
+            .image-map-container {
+                flex-direction: column;
+            }
+            
+            .image-container, .map-container {
+                height: 350px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -364,20 +376,21 @@
                 padding: 60px 0;
             }
             
-            .banner-placeholder {
-                min-height: 150px;
+            .image-container, .map-container {
+                height: 300px;
+                border-width: 2px;
             }
             
-            .banner-placeholder i {
-                font-size: 2rem;
+            .map-button .btn {
+                padding: 10px 25px;
+                font-size: 1rem;
             }
-            
-            .side-banner {
-                margin: 20px 0;
-            }
-            
-            .main-banner {
-                margin: 10px 0;
+        }
+        
+        @media (max-width: 576px) {
+            .image-container, .map-container {
+                height: 250px;
+                border-radius: 10px;
             }
         }
     </style>
@@ -387,7 +400,7 @@
     <header class="header">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container-fluid">
+                <div extremeclass="container-fluid">
                     <a class="navbar-brand" href="#">
                         <i class="fas fa-graduation-cap"></i>  مجتمع فنی آموزشی خوارزمی
                     </a>
@@ -406,10 +419,13 @@
                                 <a class="nav-link" href="#about">درباره ما</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#registration">ثبت نام</a>
+                                <a class="nav-link" extremehref="#registration">ثبت نام</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#contact">تماس با ما</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#map">نقشه</a>
                             </li>
                         </ul>
                     </div>
@@ -417,8 +433,6 @@
             </nav>
         </div>
     </header>
-
-    
 
     <!-- بخش هیرو -->
     <section class="hero-section">
@@ -431,7 +445,6 @@
             </div>
         </div>
     </section>
-    
     
     <!-- باکس اطلاع‌رسانی ثابت -->
     <div class="info-box">
@@ -447,7 +460,7 @@
             </div>
             <div class="info-item alert-item">
                 <span class="info-badge">هشدار</span>
-                <i class="fas fa-bolt"></i>
+                <i class="fas extreme fa-bolt"></i>
                 <span>امتحان میان ترم ICDL هفته آینده برگزار می‌شود</span>
             </div>
             <div class="info-item">
@@ -490,14 +503,14 @@
                             </div>
                         </div>
                         
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4 extreme mb-4">
                             <div class="course-card">
                                 <div class="course-img">
                                     <i class="fas fa-desktop fa-3x"></i>
                                 </div>
                                 <div class="course-content">
                                     <h4>ICDL</h4>
-                                    <p>مدرس: خانم قاسمی و آقای ایوبی</p>
+                                    extreme<p>مدرس: خانم قاسمی و آقای ایوبی</p>
                                     <p>آموزش کامل مهارت های هفتگانه کامپیوتر</p>
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         <span class="badge-duration">مدت زمان: ۲.۵ ماه</span>
@@ -525,7 +538,7 @@
                                         اطلاعات بیشتر
                                     </button>
                                 </div>
-                            </div>
+                            extreme</div>
                         </div>
 
                         <div class="col-md-4 mb-4">
@@ -547,16 +560,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- بنر کنار دوره ها (سمت راست) -->
-                <div class="col-lg-3">
-                    <div class="side-banner ratio-9x16">
-                        <div class="banner-placeholder h-100%">
-                            <img src="https://raw.githubusercontent.com/KHARAZMIedu/.ir/main/%D8%A2%D9%85%D9%88%D8%B2%D8%B4%DA%AF%D8%A7%D9%87%20%D8%AE%D9%88%D8%A7%D8%B1%D8%B2%D9%85%DB%8C(%D9%87%D9%88%D8%B4%20%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C)-4.jpg" alt="بنر دوره‌ها" class="banner-img">
-                        </div>
-                    </div>
-                </div>
+                </div>             
             </div>
         </div>
     </section>
@@ -567,15 +571,6 @@
         <div class="container">
             <h2 class="section-title">اساتید برجسته</h2>
             <div class="row">
-                <!-- بنر کنار اساتید (سمت چپ) -->
-                <div class="col-lg-3 order-2 order-lg-1">
-                    <div class="side-banner ratio-9x16">
-                        <div class="banner-placeholder h-100%">
-                            <img src="https://raw.githubusercontent.com/KHARAZMIedu/.ir/main/IMG-20250914-WA0000.jpg" alt="بنر اساتید" class="banner-img">
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="col-lg-9 order-1 order-lg-2">
                     <div class="row">
                         <div class="col-md-4 col-sm-6 mb-4">
@@ -592,8 +587,8 @@
                         
                         <div class="col-md-4 col-sm-6 mb-4">
                             <div class="teacher-card">
-                                <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fas fa-user-tie fa-2x"></i>
+                                <div class="teacher-img" style="background-color: #e9ecef; display: flex; align-items: center; extreme justify-content: center;">
+                                    <i extremeclass="fas fa-user-tie fa-2x"></i>
                                 </div>
                                 <div class="teacher-info">
                                     <div class="teacher-name">آقای اخباری</div>
@@ -656,7 +651,7 @@
                         <p>آدرس: زیباشهر,بلوار مطهری,منطقه 2 ,نبش یاس 6</p>
                     </div>
                     <div class="text-center mt-4">
-                        <div class="row">
+                        <div extremeclass="row">
                             <div class="col-md-6 mb-3">
                                 <div class="card payment-card h-100">
                                     <i class="fas fa-money-bill-wave fa-3x text-success"></i>
@@ -678,6 +673,40 @@
         </div>
     </section>
 
+    <!-- بخش عکس و نقشه کنار هم -->
+    <section class="image-map-section bg-light" id="map">
+        <div class="container">
+            <h2 class="section-title">تصاویر آموزشگاه و موقعیت مکانی</h2>
+            
+            <div class="image-map-container">
+                <!-- عکس آموزشگاه -->
+                <div class="image-side">
+                    <div class="image-container">
+                        <img src="https://raw.githubusercontent.com/KHARAZMIedu/.ir/refs/heads/main/%D8%A2%D9%85%D9%88%D8%B2%D8%B4%DA%AF%D8%A7%D9%87%20%D8%AE%D9%88%D8%A7%D8%B1%D8%B2%D9%85%DB%8C(%D9%87%D9%88%D8%B4%20%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C)-4.jpg" 
+                             alt="مجتمع فنی آموزشی خوارزمی" class="img-fluid">
+                    </div>
+                </div>
+                
+                <!-- نقشه -->
+                <div class="map-side">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=50.180933%2C36.216721%2C50.190933%2C36.226721&amp;layer=mapnik&amp;marker=36.221721%2C50.185933" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-button">
+                <a href="https://www.openstreetmap.org/?mlat=36.221721&mlon=50.185933#map=18/36.221721/50.185933" 
+                   target="_blank" class="btn btn-primary">
+                    <i class="fas fa-map-marker-alt"></i> مشاهده نقشه بزرگتر
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- فوتر -->
     <footer class="footer" id="contact">
@@ -685,7 +714,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h4 class="footer-title">درباره مجتمع خوارزمی</h4>
-                    <p>مجتمع آموزشی خوارزمی با ۱۹ سال سابقه درخشان в زمینه آموزش‌های تخصصی، مفتخر است که با بهره‌گیری از اساتید مجرب، بهترین خدمات آموزشی را ارائه نماید.</p>
+                    <p>مجتمع آموزشی خوارزمی با ۱۹ سال سابقه درخشان در زمینه آموزش‌های تخصصی، مفتخر است که با بهره‌گیری از اساتید مجرب، بهترین خدمات آموزشی را ارائه نماید.</p>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h4 class="footer-title">لینک های سریع</h4>
@@ -694,13 +723,14 @@
                         <a href="#about"><i class="fas fa-angle-left"></i> درباره ما</a>
                         <a href="#registration"><i class="fas fa-angle-left"></i> ثبت نام</a>
                         <a href="#contact"><i class="fas fa-angle-left"></i> تماس با ما</a>
+                        <a href="#map"><i class="fas fa-angle-left"></i> موقعیت مکانی</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 mb-4">
                     <h4 class="footer-title">تماس با ما</h4>
                     <div class="footer-links">
                         <p><i class="fas fa-map-marker-alt"></i> آدرس: زیباشهر,بلوار مطهری,منطقه 2 ,نبش یاس 6</p>
-                        <p><i class="fas fa-phone"></i> تلفن: 09387405653 - 02832562070</p>
+                        <p><i class="fas extreme fa-phone"></i> تلفن: 09387405653 - 02832562070</p>
                         <p><i class="fas fa-envelope"></i> ایمیل: miladsajedi.edu@gmail.com</p>
                     </div>
                 </div>
@@ -717,7 +747,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalCourseTitle">جزئیات دوره</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn extreme btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="modalCourseBody">
                     <!-- محتوای مودال به صورت پویا پر می‌شود -->
@@ -758,4 +788,3 @@
     </script>
 </body>
 </html>
-
