@@ -493,6 +493,73 @@
             color: var(--dark-color);
         }
         
+        /* استایل‌های جدید برای بخش آزمون‌ها */
+        .exam-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            margin-bottom: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .exam-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .exam-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        
+        .exam-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        
+        .exam-features {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        
+        .exam-features li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .exam-features li i {
+            margin-left: 10px;
+            color: var(--primary-color);
+        }
+        
+        .exam-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .exam-button:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
         @media (max-width: 768px) {
             .hero-section {
                 height: 400px;
@@ -538,13 +605,16 @@
                                 <a class="nav-link" href="#courses">دوره ها</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="#exams">آزمون ها</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="#about">درباره ما</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#registration">ثبت نام</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contact">تماس با мы</a>
+                                <a class="nav-link" href="#contact">تماس با ما</a>
                             </li>
                         </ul>
                     </div>
@@ -675,7 +745,7 @@
                                     <div class="course-content">
                                         <h3 itemprop="name">دیپلم</h3>
                                         <p itemprop="provider">مدرس: آقای محمدبیگی</p>
-                                        <p itemprop="description">اخذ دیپلم رسمی آموزش و پرورش</p>
+                                        <p itemprop="description">اخذ دیпلم رسمی آموزش و پرورش</p>
                                         <div class="d-flex justify-content-between align-items-center mb-3">
                                             <span class="badge-duration" itemprop="time">مدت زمان: ۶ ماه</span>
                                         </div>
@@ -686,8 +756,6 @@
                                     </div>
                                 </div>
                             </article>
-
-                            
                         </div>
                     </div>             
                 </div>
@@ -758,6 +826,38 @@
                                         <div class="teacher-subject">مدرس دیپلم</div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش جدید آزمون‌ها -->
+        <section class="py-5" id="exams" role="region" aria-labelledby="exams-heading">
+            <div class="container">
+                <h2 id="exams-heading" class="section-title">آزمون‌های آنلاین</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="exam-card">
+                            <div class="exam-header">
+                                <h3>آزمون تستی دیپلم</h3>
+                                <p>سنجش سطح دانش و آمادگی برای دریافت دیپلم</p>
+                            </div>
+                            <div class="exam-body">
+                                <p>با شرکت در این آزمون آنلاین، سطح دانش و آمادگی خود را برای دریافت دیپلم محک بزنید. این آزمون شامل سوالات استاندارد و مطابق با سرفصل‌های آموزشی دیپلم می‌باشد.</p>
+                                
+                                <ul class="exam-features">
+                                    <li><i class="fas fa-check-circle"></i> شامل ۵۰ سوال تستی استاندارد</li>
+                                    <li><i class="fas fa-check-circle"></i> زمان آزمون: ۶۰ دقیقه</li>
+                                    <li><i class="fas fa-check-circle"></i> دریافت نتایج بلافاصله پس از آزمون</li>
+                                    <li><i class="fas fa-check-circle"></i> تحلیل نتایج و ارائه راهکارهای بهبود</li>
+                                </ul>
+                                
+                                <a href="https://kharazmiedu.github.io/qiz/" class="exam-button" target="_blank">
+                                    <i class="fas fa-play-circle"></i> شروع آزمون
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -875,6 +975,7 @@
                     <h3 class="footer-title">لینک های سریع</h3>
                     <div class="footer-links">
                         <a href="#courses"><i class="fas fa-angle-left" aria-hidden="true"></i> دوره های آموزشی</a>
+                        <a href="#exams"><i class="fas fa-angle-left" aria-hidden="true"></i> آزمون ها</a>
                         <a href="#about"><i class="fas fa-angle-left" aria-hidden="true"></i> درباره ما</a>
                         <a href="#registration"><i class="fas fa-angle-left" aria-hidden="true"></i> ثبت نام</a>
                         <a href="#contact"><i class="fas fa-angle-left" aria-hidden="true"></i> تماس با ما</a>
@@ -963,10 +1064,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
