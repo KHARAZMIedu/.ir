@@ -598,7 +598,7 @@
             </div>
         </aside>
         
-        <!-- بخش دوره های آموزشی -->
+        
         <section class="py-5" id="courses" role="region" aria-labelledby="courses-heading">
             <div class="container">
                 <h2 id="courses-heading" class="section-title">دوره های آموزشی</h2>
@@ -619,7 +619,7 @@
                                             <span class="badge-duration" itemprop="time">مدت زمان: ۳ ماه</span>
                                         </div>
                                         <meta itemprop="price" content="1200000">
-                                        <button class="btn btn-primary w-100" onclick="showCourseDetails('پایتون', 'آقای مهندس اخباری', '۳ ماه', '۱,۲۰۰,۰۰۰ تومان', 'در این دوره شما برنامه نویسی پایتون را از پایه تا پیشرفته یاد خواهید گرفت. این دوره شامل مباحث مقدماتی، شیء گرایی، کار با پایگاه داده و ساخت پروژه عملی می‌باشد.')">
+                                        <button class="btn btn-primary w-100" onclick="showCourseDetails('پایتون', 'آقای مهندس اخباری', '۳ ماه', 'در این دوره شما برنامه نویسی پایتون را از پایه تا پیشرفته یاد خواهید گرفت. این دوره شامل مباحث مقدماتی، شیء گرایی، کار با پایگاه داده و ساخت پروژه عملی می‌باشد.')">
                                             اطلاعات بیشتر
                                         </button>
                                     </div>
@@ -651,7 +651,7 @@
                                             <span class="badge-duration" itemprop="time">مدت زمان: ۲.۵ ماه</span>
                                         </div>
                                         <meta itemprop="price" content="800000">
-                                        <button class="btn btn-primary w-100" onclick="showCourseDetails('ICDL', 'خانم قاسمی و آقای مهندس ایوبی', '۲.۵ ماه', '۸۰۰,００۰ تومان', 'دوره ICDL شامل آموزش هفت مهارت اصلی کامپیوتر شامل: مفاهیم پایه فناوری اطلاعات، استفاده از کامپیوتر و مدیریت فایل‌ها، واژه پردازی، صفحه گسترده، پایگاه داده، ارائه مطلب و اطلاعات و ارتباطات می‌باشد.')">
+                                        <button class="btn btn-primary w-100" onclick="showCourseDetails('ICDL', 'خانم قاسمی و آقای مهندس ایوبی', '۲.۵ ماه',  'دوره ICDL شامل آموزش هفت مهارت اصلی کامپیوتر شامل: مفاهیم پایه فناوری اطلاعات، استفاده از کامپیوتر و مدیریت فایل‌ها، واژه پردازی، صفحه گسترده، پایگاه داده، ارائه مطلب و اطلاعات و ارتباطات می‌باشد.')">
                                             اطلاعات بیشتر
                                         </button>
                                     </div>
@@ -691,7 +691,7 @@
                                             <span class="badge-duration" itemprop="time">مدت زمان: ۶ ماه</span>
                                         </div>
                                         <meta itemprop="price" content="2000000">
-                                        <button class="btn btn-primary w-100" onclick="showCourseDetails('دیپلم', 'آقای مهندس محمدبیگی', '۶ ماه', '۲,００۰,۰۰۰ تومان', 'این دوره برای افرادی طراحی شده که قصد اخذ دیplom رسمی آموزش و پرورش را دارند. در این دوره تمامی دروس لازم تدریس شده و در پایان، مدرک معتبر اعطا می‌گردد.')">
+                                        <button class="btn btn-primary w-100" onclick="showCourseDetails('دیپلم', 'آقای مهندس محمدبیگی', '۶ ماه', 'این دوره برای افرادی طراحی شده که قصد اخذ دیplom رسمی آموزش و پرورش را دارند. در این دوره تمامی دروس لازم تدریس شده و در پایان، مدرک معتبر اعطا می‌گردد.')">
                                             اطلاعات بیشتر
                                         </button>
                                     </div>
@@ -787,9 +787,9 @@
                     <div class="col-md-8 mx-auto">
                         <div class="highlight mb-4">
                             <h3><i class="fas fa-info-circle" aria-hidden="true"></i> توجه</h3>
-                            <p>برای ثبت نام در دوره‌ها حتما باید به آموزشگاه مراجعه نمایید.</p>
-                            <p>امکان ثبت نام به دو صورت نقدی و قسطی وجود دارد.</p>
-                            <p>آدرس: زیباشهر,بلوار مطهری,منطقه 2 ,نبش یاس 6</p>
+                            <p><strong>برای ثبت نام در دوره‌ها حتما باید به آموزشگاه مراجعه نمایید.</strong></p>
+                            <p><strong>امکان ثبت نام به دو صورت نقدی و قسطی وجود دارد.</strong></p>
+                            <p><strong>آدرس: زیباشهر,بلوار مطهری,منطقه 2 ,نبش یاس 6</strong></p>
                         </div>
                         <div class="text-center mt-4">
                             <div class="row">
@@ -943,7 +943,6 @@
             modalBody.innerHTML = `
                 <p><strong>مدرس:</strong> ${teacher}</p>
                 <p><strong>مدت زمان:</strong> ${duration}</p>
-                <p><strong>هزینه:</strong> ${price}</p>
                 <p><strong>توضیحات:</strong> ${description}</p>
             `;
             
